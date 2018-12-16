@@ -1,0 +1,24 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+
+    public void termAP(int a, int b, int n){
+        int d = b-a;
+        int Tn = a+(n-1)*d;
+        System.out.println(Tn);
+    }
+	public static void main (String[] args) {
+	    GFG g = new GFG();
+	    Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+	    for (int i=0; i<t; i++)
+	    {
+	        int a = sc.nextInt();
+	        int b = sc.nextInt();
+	        int n = sc.nextInt();
+	        g.termAP(a,b,n);
+	    }
+	}
+}
