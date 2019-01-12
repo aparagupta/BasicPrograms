@@ -1,0 +1,63 @@
+public class HelloWorld{
+public static int findFirstOccurence(int arr[], int x, int n)
+{
+    int first = -1;
+    int last= -1;
+    int low = 0; int high = n-1;
+    while(high>=low){
+        int mid = low + (high-low)/2;
+        if(first == -1){
+            if( x > arr[mid-1] && x== arr[mid])
+            {
+                first = mid;
+                continue;
+            }
+            else if(x > arr[mid])
+            {
+                low = mid+1;
+            }
+            else 
+                high = mid-1;
+        }  
+        else
+            return first;
+    }
+    return -1;
+}
+public static int findLastOccurence(int arr[], int x, int n)
+{
+    int first = -1;
+    int last= -1;
+    int low = 0; int high = n-1;
+    while(high>=low){
+        int mid = low + (high-low)/2;
+        if(last == -1){
+            if( x < arr[mid+1] && arr[mid] == x)
+            {
+                last = mid;
+                continue;
+            }
+            else if(x < arr[mid])
+            {
+                high = mid-1;
+            }
+            else 
+                low = mid+1;
+        }  
+        else
+            return last;
+    }
+    return -1;
+}
+     public static void main(String []args){
+         int arr[] = {1,1,1,2,2,3,3,3,4,5,6};
+         int n = arr.length;
+         int x= 3;
+        int firsto =  findFirstOccurence(arr, x, n);
+        int lasto =  findLastOccurence(arr, x, n);
+        int count = lasto -firsto +1;
+        System.out.println(firsto);
+        System.out.println(lasto);
+        System.out.println(count);
+     }
+}
